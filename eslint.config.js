@@ -11,9 +11,11 @@ import eslintAllyPlugin from 'eslint-plugin-jsx-a11y'
 import eslintImportPlugin from 'eslint-plugin-import'
 
 export default [
-  { ignores: ['node_modules', 'coverage', 'eslint.config.js'] },
+  { ignores: ['dist','node_modules', 'coverage', 'eslint.config.js'] },
   {
     files: ['**/*.{js,jsx}'],
+
+
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,

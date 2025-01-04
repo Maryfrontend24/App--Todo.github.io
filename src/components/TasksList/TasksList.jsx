@@ -2,9 +2,10 @@ import Task from "../Task/Task.jsx";
 import { Component } from 'react';
 import PropTypes from "prop-types";
 
+
 export default class TasksList extends Component {
     render() {
-        const { tasks, onToggleCompleted, onDeleted, onEdit } = this.props;
+        const { tasks, onDeleted, onEdit, onToggleCompleted } = this.props;
 
         return (
             <ul className="todo-list">
@@ -12,15 +13,18 @@ export default class TasksList extends Component {
                     <Task
                         key={task.id}
                         task={task}
-                        onEdit={onEdit}
                         onToggleCompleted={() => onToggleCompleted(task.id)}
                         onDeleted={() => onDeleted(task.id)}
+                        onEdit={(newText) => onEdit(task.id, newText)}
                     />
                 ))}
             </ul>
         );
     }
 }
+
+
+
 
 
 TasksList.defaultProps = {
