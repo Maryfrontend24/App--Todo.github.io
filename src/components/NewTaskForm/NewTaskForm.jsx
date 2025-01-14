@@ -1,58 +1,49 @@
-import {Component} from "react";
-import PropTypes from "prop-types";
 import React, { useState } from 'react';
 
-export default class NewTaskForm extends Component {
-    state = {
-        label: ''
-    }
 
-    onLabelChange = (e) => {
-        const value = e.target.value;
-        this.setState({
-            label: value.trim()
-        });
-    }
+const NewTaskForm = (props)=>{
+const [newTextTask, setNewTextTask] = useState("");
 
-    onSubmit = (e) => {
+const onLabelChange=(e)=>{
+    const value = e.target.value;
+    setNewTextTask(value.trim());
+
+}
+
+    const onSubmit = (e) => {
         e.preventDefault();
-        if (this.state.label === '') {
+
+        if (!newTextTask.trim()) {
             return;
         }
-        this.props.onItemAdd(this.state.label);
-        this.setState({
-            label: ''
-        });
-    }
+        setNewTextTask('');
 
-    handleKeyPress = (e) => {
-        if (e.key === 'Enter' && this.state.label === '') {
+        props.addTask(newTextTask);
+    };
+
+
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter' && !newTextTask.trim()) {
             e.preventDefault();
         }
-    }
+    };
 
-    render() {
-        return (
-            <form className="todo-form"
-                  onSubmit={this.onSubmit}
-            >
-                <input type="text"
-                       className="new-todo"
-                       onChange={this.onLabelChange}
-                       placeholder="My daily routine..."
-                       autoFocus
-                       value={this.state.label}
-                       onKeyPress={this.handleKeyPress}
-                />
-            </form>
-        )
-    }
+
+    return (
+        <form className="todo-form"
+              onSubmit={onSubmit}
+        >
+            <input type="text"
+                   className="new-todo"
+                   onChange={onLabelChange}
+                   placeholder="My daily routine..."
+                   autoFocus
+                   value={newTextTask}
+                   onKeyPress={handleKeyPress}
+            />
+        </form>
+
+    )
 }
 
-NewTaskForm.defaultProps = {
-    placeholder: 'My daily routine...',
-};
-
-NewTaskForm.propTypes = {
-    onItemAdd: PropTypes.func.isRequired,
-}
+export default NewTaskForm;

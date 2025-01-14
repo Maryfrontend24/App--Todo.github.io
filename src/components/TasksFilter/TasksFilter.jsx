@@ -2,41 +2,36 @@ import {Component} from "react";
 import PropTypes from "prop-types";
 
 
-export default class TasksFilter extends Component {
+const TasksFilter = (props)=>{
 
-    buttonFilterChange = (filter) => {
-        this.props.setFilter(filter);
-    };
-
-        render()
-        {
-            return (
+    const onChangeAllFilter = ()=>{
+       props.changeFilter('all')
+    }
+    const onChangeActiveFilter = ()=>{
+        props.changeFilter('active')
+    }
+    const onChangeCompletedFilter = ()=>{
+        props.changeFilter('completed')
+    }
+    return (
                 <ul className='filters'>
                     <li>
-                        <button onClick={() => this.buttonFilterChange('all')}>All</button>
+                        <button onClick={onChangeAllFilter}>All</button>
                     </li>
                     <li>
-                        <button onClick={() => this.buttonFilterChange('active')}>Active</button>
+                        <button onClick={onChangeActiveFilter}>Active</button>
                     </li>
 
                     <li>
-                        <button onClick={() => this.buttonFilterChange('completed')}>Completed</button>
+                        <button onClick={onChangeCompletedFilter}>Completed</button>
                     </li>
 
                 </ul>
             );
-        }
+
     }
 
+export default TasksFilter;
 
-TasksFilter.defaultProps = {
-    filter: 'All',
-};
-
-TasksFilter.propTypes = {
-    filter: PropTypes.string,
-    buttonFilterChange: PropTypes.func,
-    setFilter: PropTypes.func,
-}
 
 

@@ -72,6 +72,7 @@ body {
   color: rgba(0, 0, 0, 0.5);
 }
 
+
 .todoapp h1 {
   position: absolute;
   top: -140px;
@@ -117,7 +118,7 @@ body {
   border-top: 1px solid #e6e6e6;
 }
 
-.toggle-all {
+{
   width: 1px;
   height: 1px;
   border: none; /* Mobile Safari */
@@ -127,27 +128,27 @@ body {
   bottom: 100%;
 }
 
-.toggle-all + label {
-  width: 60px;
-  height: 34px;
-  font-size: 0;
-  position: absolute;
-  top: -52px;
-  left: -13px;
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-}
+/*.toggle-all + label {*/
+/*  width: 60px;*/
+/*  height: 34px;*/
+/*  font-size: 0;*/
+/*  position: absolute;*/
+/*  top: -52px;*/
+/*  left: -13px;*/
+/*  -webkit-transform: rotate(90deg);*/
+/*  transform: rotate(90deg);*/
+/*}*/
 
-.toggle-all + label:before {
-  content: '❯';
-  font-size: 22px;
-  color: #e6e6e6;
-  padding: 10px 27px 10px 27px;
-}
+/*.toggle-all + label:before {*/
+/*  content: '❯';*/
+/*  font-size: 22px;*/
+/*  color: #e6e6e6;*/
+/*  padding: 10px 27px 10px 27px;*/
+/*}*/
 
-.toggle-all:checked + label:before {
-  color: #737373;
-}
+/*.toggle-all:checked + label:before {*/
+/*  color: #737373;*/
+/*}*/
 
 .todo-list {
   margin: 0;
@@ -155,10 +156,11 @@ body {
   list-style: none;
 }
 
-.todo-list li {
+.todo-list .li {
   position: relative;
   font-size: 24px;
   border-bottom: 1px solid rgba(64, 47, 175, 0.18);
+  height: 60px;
 }
 
 .todo-list li:last-child {
@@ -181,65 +183,67 @@ body {
   display: none;
 }
 
-.todo-list li .toggle {
-  text-align: center;
-  width: 40px;
-  height: auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  margin: auto 0;
-  border: none; /* Mobile Safari */
-  -webkit-appearance: none;
-  appearance: none;
-  cursor: pointer;
-}
+/*.todo-list li .inp-cbx {*/
+/*  text-align: center;*/
+/*  width: 40px;*/
+/*  height: auto;*/
+/*  position: absolute;*/
+/*  top: 0;*/
+/*  bottom: 0;*/
+/*  margin: auto 0;*/
+/*  border: none; !* Mobile Safari *!*/
+/*  -webkit-appearance: none;*/
+/*  appearance: none;*/
+/*  cursor: pointer;*/
+/*}*/
 
-.todo-list li .toggle {
-  opacity: 0;
-}
+/*!*.todo-list li .toggle {*!*/
+/*!*  opacity: 0;*!*/
+/*!*}*!*/
 
-.todo-list li .icon {
-  width: 30px;
-  height: 40px;
-  font-size: 34px;
-  color: #cc9a9a;
-  margin: auto 0;
-  transition: color 0.2s ease-out;
-  cursor: pointer;
-}
+/*.todo-list li .icon {*/
+/*  width: 30px;*/
+/*  height: 40px;*/
+/*  font-size: 34px;*/
+/*  color: #cc9a9a;*/
+/*  margin: auto 0;*/
+/*  transition: color 0.2s ease-out;*/
+/*  cursor: pointer;*/
+/*}*/
 
-.todo-list li .icon:hover {
-  color: #af5b5e;
-}
-.todo-list li .toggle + label {
-  /*
-      Firefox requires `#` to be escaped - https://bugzilla.mozilla.org/show_bug.cgi?id=922433
-      IE and Edge requires *everything* to be escaped to render, so we do that instead of just the `#` - https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7157459/
-  */
-  background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23ededed%22%20stroke-width%3D%223%22/%3E%3C/svg%3E');
-  background-repeat: no-repeat;
-  background-position: center left;
-}
+/*.todo-list li .icon:hover {*/
+/*  color: #af5b5e;*/
+/*}*/
 
-.todo-list li .toggle:checked + label {
-  background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23bddad5%22%20stroke-width%3D%223%22/%3E%3Cpath%20fill%3D%22%235dc2af%22%20d%3D%22M72%2025L42%2071%2027%2056l-4%204%2020%2020%2034-52z%22/%3E%3C/svg%3E');
-}
 
-.todo-list li label {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 85px 15px 60px;
-}
+/*!*.todo-list li .toggle + label {*!*/
+/*!*  !**!*/
+/*!*      Firefox requires `#` to be escaped - https://bugzilla.mozilla.org/show_bug.cgi?id=922433*!*/
+/*!*      IE and Edge requires *everything* to be escaped to render, so we do that instead of just the `#` - https://developer.microsoft.com/en-us/microsoft-edge/platform/issues/7157
+/*!*  *!*!*/
+/*!*  background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23ededed%22%20stroke-width%3D%223%22/%3E%3C/svg%3E');*!*/
+/*!*  background-repeat: no-repeat;*!*/
+/*!*  background-position: center left;*!*/
+/*!*}*!*/
 
-.todo-list li label .created {
-  font-size: 13px;
-  color: gray;
-}
+/*.todo-list li .toggle:checked + label {*/
+/*  background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23bddad5%22%20stroke-width%3D%223%22/%3E%3Cpath%20fill%3D%22%235dc2af%22%20d%3D%22M72%2025L42%2071%2027%2056l-4%204%2020%2020%2034-52z%22/%3E%3C/svg%3E');*/
+/*}*/
 
-.todo-list li label .description {
+/*.inp-cbx label {*/
+/*  position: relative;*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*  justify-content: space-between;*/
+/*  padding: 15px 85px 15px 60px;*/
+/*}*/
+
+/*.todo-list li label .created {*/
+/*  font-size: 13px;*/
+/*  color: gray;*/
+/*}*/
+
+.inp-cbx.description {
   word-break: break-all;
   display: block;
   line-height: 1.2;
@@ -248,7 +252,7 @@ body {
   color: #4d4d4d;
 }
 
-.todo-list li.completed label .description {
+.inp-cbx.completed label.description {
   color: #cdcdcd;
   text-decoration: line-through;
 }
@@ -345,7 +349,7 @@ body {
   cursor: default;
 }
 
-.filters li button {
+.filters button {
   display: inline-block;
   color: inherit;
   margin: 3px;
@@ -484,3 +488,111 @@ button.icon-pause:hover {
   height: 25px;
 }
 
+
+
+
+.inp-cbx{
+  display:none;
+}
+
+
+.cbx {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+}
+.cbx span {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translate3d(0, 0, 0);
+}
+.cbx span:first-child {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transform: scale(1);
+  vertical-align: middle;
+  border: 1px solid #B9B8C3;
+  transition: all 0.2s ease;
+}
+.cbx span:first-child svg {
+  position: absolute;
+  background-position: center left;
+  z-index: 1;
+  top: 8px;
+  left: 6px;
+  fill: none;
+  stroke: white;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 16px;
+  stroke-dashoffset: 16px;
+  transition: all 0.3s ease;
+  transition-delay: 0.1s;
+  transform: translate3d(0, 0, 0);
+}
+.cbx span:first-child:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #506EEC;
+  display: block;
+  transform: scale(0);
+  opacity: 1;
+  border-radius: 50%;
+  transition-delay: 0.2s;
+}
+.cbx span:last-child {
+  margin-left: 8px;
+}
+.cbx span:last-child:after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background: #B9B8C3;
+  transform-origin: 0 0;
+  transform: scaleX(0);
+}
+.cbx:hover span:first-child {
+  border-color: rgba(64, 47, 175, 0.38);
+}
+
+.inp-cbx:checked + .cbx span:first-child {
+  border-color: rgba(64, 47, 175, 0.37);
+  background: rgba(64, 47, 175, 0.37);
+  animation: check 0.6s ease;
+}
+.inp-cbx:checked + .cbx span:first-child svg {
+  stroke-dashoffset: 0;
+}
+.inp-cbx:checked + .cbx span:first-child:before {
+  transform: scale(2.2);
+  opacity: 0;
+  transition: all 0.6s ease;
+}
+.inp-cbx:checked + .cbx span:last-child {
+  color: #B9B8C3;
+  transition: all 0.3s ease;
+}
+.inp-cbx:checked + .cbx span:last-child:after {
+  transform: scaleX(1);
+  transition: all 0.3s ease;
+}
+
+@keyframes check {
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+.cbx{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
