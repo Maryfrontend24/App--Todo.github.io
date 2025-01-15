@@ -8,9 +8,9 @@ import React, {useState} from "react";
 
 
 
-const App = ()=>{
-         const [tasks, setTasks] = useState([{id:1, text:'Learning React Hooks', completed: false},
-         {id:2, text:'Watch programming videos',completed: false}
+ const App = ()=>{
+         const [tasks, setTasks] = useState([{id:1, text:'Learning React Hooks', completed: false,date: new Date()},
+         {id:2, text:'Watch programming videos',completed: false, date: new Date()}
          ]);
          const [filter, setFilter] = useState('all')
 
@@ -24,7 +24,7 @@ const App = ()=>{
 
 
     function addTask(text){
-        const newTask={id:Date.now(), text:text, completed:false};
+        const newTask={id:Date.now(), text:text, completed:false, date: new Date()};
         const newTasks =[newTask, ...tasks];
         setTasks(newTasks);
     }
